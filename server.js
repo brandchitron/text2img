@@ -5,6 +5,9 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Replace with your actual API key
+const apiKey = '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';
+
 app.use(bodyParser.json());
 
 app.post('/generate-image', async (req, res) => {
@@ -17,7 +20,7 @@ app.post('/generate-image', async (req, res) => {
             size: "1024x1024"
         }, {
             headers: {
-                'Authorization': `Bearer fuckyoubbz`, // Your API key here
+                'Authorization': `Bearer ${apiKey}`,
                 'Content-Type': 'application/json',
             }
         });
